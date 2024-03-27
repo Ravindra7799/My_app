@@ -1,0 +1,11 @@
+<table>
+    <thead>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of mails">
+            <td [ngStyle]="{'color': m.completed ? 'ble' : 'red'}">{{m.title}}</td>
+
+        </tr>
+    </tbody>
+</table>

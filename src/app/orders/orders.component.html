@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+</head>
+<body>
+    <div style="display: flex;margin: 15px 0 0 10px;">
+        <!-- ============= LEFT ============= -->
+        <div style="width: 25%;">
+            <div>FILTERS</div>
+            <div>CATEGORIES</div>
+            <div>
+                    <div *ngFor="let o of uniqueCategories">
+                      <input type="checkbox" [id]="o.id"  [value]="o.category" [(ngModel)]="o.checked">
+                      <label [for]="o.id">{{ o.category }}</label><br>
+                    </div>
+                    <br>
+            </div>
+        </div>
+        <!-- ============= RIGHT ============== -->
+        <div style="width: 75%;">
+            <div>
+                <div class="grid-container" *ngFor="let item of orders">
+                    <img [src]="item.image" alt="{{ item.title }}" style="width: 100px; height: auto;">
+                    <h2>{{ item.title }}</h2>
+                    <p><strong>Price:</strong> ${{ item.price }}</p>
+                    <p><strong>Description:</strong> {{ item.description }}</p>
+                    <p><strong>Category:</strong> {{ item.category }}</p>
+                    <p><strong>Rating:</strong> {{ item.rating.rate }} ({{ item.rating.count }} reviews)</p>
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

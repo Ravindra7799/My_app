@@ -1,0 +1,34 @@
+<p>create-cars works!</p>
+
+<form [formGroup]="carForm">
+    <label for="">Vehicle:</label>
+    <input type="text" formControlName="vehicle">
+    <br>
+
+    <label for="">Manufacturer:</label>
+    <input type="text" formControlName="manufacturer">
+    <br>
+
+    <label for="">Model:</label>
+    <input type="text" formControlName="model">
+    <br>
+
+    <label for="">Color:</label>
+    <input type="text" formControlName="color">
+    <br>
+
+    <label for="">Type:</label>
+    <input type="text" formControlName="type">
+    <br>
+
+    <label for="">Fuel:</label>
+    <input type="text" formControlName="fuel">
+    <br>
+
+    <label for="">Image:</label>
+    <input type="text" formControlName="image">
+    <br>
+
+    <button style="background-color: yellow; border-radius: 10px;" (click)="submit()">Submit</button>
+    
+</form>

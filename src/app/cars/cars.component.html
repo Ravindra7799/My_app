@@ -1,0 +1,66 @@
+<!-- =================== Single ======================== -->
+<input type="text" [(ngModel)]="term" (keyup)="filteredcars()">
+
+<select [(ngModel)]="pageNo" (change)="pagedcars()">
+   <option value="1">1</option>
+   <option value="2">2</option>
+   <option value="3">3</option>
+   <option value="4">4</option>
+
+</select>
+
+<label for="">Column:</label>
+<select [(ngModel)]="column">
+    <option value="color">color</option>
+    <option value="model">model</option>
+</select>
+ <label for="">Order:</label>
+ <select [(ngModel)]="order">
+    <option value="asc">ascending</option>
+    <option value="desc">descending</option>
+ </select>
+ <button (click)="sortedcars()">Sort</button>
+ <hr>
+ <hr>
+
+<!-- ======================= Combine ======================= -->
+<label for="">Search:</label>
+<input type="text" [(ngModel)]="queries.filter" (keyup)="loaddata()">
+
+<label for="">Page No:</label>
+<select [(ngModel)]="queries.pageNo" (change)="loaddata()">
+   <option value="1">1</option>
+   <option value="2">2</option>
+   <option value="3">3</option>
+   <option value="4">4</option>
+</select>
+
+<label for="">Column:</label>
+<select [(ngModel)]="queries.sortBy">
+    <option value="color">color</option>
+    <option value="model">model</option>
+</select>
+ <label for="">Order:</label>
+ <select [(ngModel)]="queries.order">
+    <option value="asc">ascending</option>
+    <option value="desc">descending</option>
+ </select>
+ <button (click)="loaddata()">Sort</button>
+
+<table border="1">
+    <thead>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of cars">
+            <td>{{car.model}}</td>
+            <td>{{car.color}}</td>
+            <td>{{car.vehicle}}</td>
+            <td>{{car.manufacturer}}</td>
+            <td>{{car.id}}</td>
+            <td>
+                <button (click)="deletedcars(car.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
